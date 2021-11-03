@@ -17,8 +17,13 @@ func physics_process(_delta):
 		SM.set_state("Falling")
 	else:
 		player.velocity.y = 0
+		
 	if Input.is_action_pressed("jump"):
-		SM.set_state("Moving_and_Jumping")
+		SM.set_state("Jumping")
+	if Input.is_action_pressed("punch"):
+		SM.set_state("Punching")
+	if Input.is_action_pressed("kick"):
+		SM.set_state("Kicking")
 	if player.is_moving():
 		if player.direction != prev_direction:
 			player.velocity.x = 0
@@ -26,5 +31,6 @@ func physics_process(_delta):
 		player.velocity += player.move_speed * player.move_vector()
 		player.move_and_slide(player.velocity, Vector2.UP)
 	else:
+		
 		player.velocity = Vector2.ZERO
 		SM.set_state("Idle")

@@ -19,9 +19,16 @@ export var max_leap = 1000
 
 var moving = false
 var is_jumping = false
-var double_jumped = false
 var should_direction_flip = true # wether or not player controls (left/right) can flip the player sprite
+var animating = false
 
+export var punch = 10
+
+
+export var kick = 15
+
+
+var moves = []
 
 func _physics_process(_delta):
 	velocity.x = clamp(velocity.x,-max_move,max_move)
@@ -29,10 +36,8 @@ func _physics_process(_delta):
 	if should_direction_flip:
 		if direction < 0 and not $AnimatedSprite.flip_h: $AnimatedSprite.flip_h = true
 		if direction > 0 and $AnimatedSprite.flip_h: $AnimatedSprite.flip_h = false
-	
-	if is_on_floor():
-		double_jumped = false
-		set_wall_raycasts(true)
+	print(moves)
+
 
 func is_moving():
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
@@ -49,6 +54,7 @@ func _unhandled_input(event):
 		direction = 1
 
 func set_animation(anim):
+	animating = true
 	if $AnimatedSprite.animation == anim: return
 	if $AnimatedSprite.frames.has_animation(anim): $AnimatedSprite.play(anim)
 	else: $AnimatedSprite.play()
@@ -60,25 +66,9 @@ func is_on_floor():
 			return true
 	return false
 
-func is_on_right_wall():
-	if $Wall/Right.is_colliding():
-		return true
-	return false
-
-func is_on_left_wall():
-	if $Wall/Right.is_colliding():
-		return true
-	return false
-
-func get_right_collider():
-	return $Wall/Right.get_collider()
-
-func get_left_collider():
-	return $Wall/Left.get_collider()
-	
-func set_wall_raycasts(is_enabled):
-	$Wall/Left.enabled = is_enabled
-	$Wall/Right.enabled = is_enabled
-
 func die():
 	queue_free()
+
+
+func _on_AnimatedSprite_animation_finished():
+	animating = false

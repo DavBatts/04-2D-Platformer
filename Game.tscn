@@ -46,39 +46,39 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 750, 1350, 150, 150 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 900, 1350, 150, 150 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 1050, 1350, 150, 150 )
 
-[sub_resource type="SpriteFrames" id=12]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 } ]
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0, 0, 0, 0.376471 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.639216, 0.133333, 0.133333, 1 )
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0, 0, 0, 0.501961 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=12]
 size = 30
 outline_color = Color( 0.788235, 0.12549, 0.12549, 1 )
 font_data = ExtResource( 4 )
@@ -125,9 +125,8 @@ script = ExtResource( 3 )
 [node name="Sprite" type="AnimatedSprite" parent="Enemy_Container/Enemy"]
 position = Vector2( 1538.42, 507.106 )
 scale = Vector2( 1.04674, 0.974809 )
-frames = SubResource( 12 )
+frames = SubResource( 8 )
 animation = "Idle"
-frame = 2
 playing = true
 flip_h = true
 
@@ -144,9 +143,9 @@ script = ExtResource( 3 )
 [node name="Sprite" type="AnimatedSprite" parent="Enemy_Container/Enemy2"]
 position = Vector2( 1553.54, 502.066 )
 scale = Vector2( 1.04674, 0.974809 )
-frames = SubResource( 12 )
+frames = SubResource( 8 )
 animation = "Idle"
-frame = 1
+frame = 2
 playing = true
 flip_h = true
 
@@ -163,8 +162,9 @@ script = ExtResource( 3 )
 [node name="Sprite" type="AnimatedSprite" parent="Enemy_Container/Enemy3"]
 position = Vector2( 1548.5, 502.066 )
 scale = Vector2( 1.04674, 0.974809 )
-frames = SubResource( 12 )
+frames = SubResource( 8 )
 animation = "Idle"
+frame = 1
 playing = true
 flip_h = true
 
@@ -180,9 +180,8 @@ script = ExtResource( 3 )
 [node name="Sprite" type="AnimatedSprite" parent="Enemy_Container/Enemy4"]
 position = Vector2( 1548.5, 502.066 )
 scale = Vector2( 1.04674, 0.974809 )
-frames = SubResource( 12 )
+frames = SubResource( 8 )
 animation = "Idle"
-frame = 2
 playing = true
 flip_h = true
 
@@ -201,7 +200,7 @@ script = ExtResource( 5 )
 [node name="Panel" type="Panel" parent="HUD"]
 margin_right = 1024.0
 margin_bottom = 40.0
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -211,8 +210,8 @@ margin_left = 5.0
 margin_top = 5.0
 margin_right = 445.0
 margin_bottom = 40.0
-custom_styles/fg = SubResource( 6 )
-custom_styles/bg = SubResource( 7 )
+custom_styles/fg = SubResource( 10 )
+custom_styles/bg = SubResource( 11 )
 value = 50.0
 percent_visible = false
 __meta__ = {
@@ -223,7 +222,7 @@ __meta__ = {
 margin_left = 450.0
 margin_right = 574.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 12 )
 text = "60"
 align = 1
 valign = 1
@@ -234,8 +233,8 @@ margin_top = 35.0
 margin_right = 1459.0
 margin_bottom = 70.0
 rect_rotation = 180.0
-custom_styles/fg = SubResource( 6 )
-custom_styles/bg = SubResource( 7 )
+custom_styles/fg = SubResource( 10 )
+custom_styles/bg = SubResource( 11 )
 value = 50.0
 percent_visible = false
 __meta__ = {
@@ -284,7 +283,7 @@ margin_left = 1461.48
 margin_top = 408.018
 margin_right = 1661.48
 margin_bottom = 448.018
-text = "Quit"
+text = "Load"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -294,7 +293,7 @@ margin_left = 1457.02
 margin_top = 333.745
 margin_right = 1657.02
 margin_bottom = 373.745
-text = "Load"
+text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }

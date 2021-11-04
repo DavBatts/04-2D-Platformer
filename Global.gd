@@ -6,7 +6,6 @@ const SAVE_PATH = "res://settings.cfg"
 onready var HUD = get_node_or_null("/root/Game/UI/HUD")
 onready var Enemies = get_node_or_null("/root/Game/Enemy_Container")
 onready var Game = load("res://Game.tscn")
-onready var Coin = load("res://Coin/Coin.tscn")
 
 var player1_health = 100.0
 var player1_maxhealth = 100.0

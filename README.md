@@ -1,11 +1,20 @@
-# 2D-Platformer-Character
+# 04-2D-Platformer
+A 2D platformer created for a project for class
 
-A somewhat-generic character (including animations and state machine) appropriate for a 2D platformer built in Godot. Includes test level.
+
 
 ## Implementation
 Built using Godot 3.2.3
-
-The player sprite is adaptated from [MV Platformer Male](https://opengameart.org/content/mv-platformer-male-32x64) by MoikMellah. CC0 Licensed.
+player can jump
+there are four enemies that share a life bar
+the player can fight the enemies
+it can kick and punch using the E and R keys.
+The player moves with W,A,S,D
+Instead of a score the game reports the players life and the enemies life
+Background music added
+enemy sprites are animated 
+camera follows player
+game saves, loads and quits.
 
 ## References
 None
@@ -17,4 +26,4 @@ None
 None
 
 ## Created by 
-Jason Francis
+Davion Batts
